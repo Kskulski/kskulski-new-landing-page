@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regular Expression Tester</title>
+    <style>
+        body {
+            background-color:salmon
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: left;
+            color: green
+        }
+    </style>
+</head>
+<body>
+    <h1>Regular Expression Tester</h1>
+    <label for="input1">Expression:</label>
+    <input type="text" id="input1" name="input1">
+    <label for="input2">Search:</label>
+    <input type="text" id="input2" name="input2">
+    <button onclick="test()">Test!</button>
+    <p id="output"></p>
+
+    <script>
+        function test() {
+            var str1 = document.getElementById("input1");
+            var str2 = new RegExp(document.getElementById("input2"));
+            var result = str2.test(str1);
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
