@@ -1,26 +1,27 @@
 function addItem() {
-    var list = document.createElement("li");
-    var newInput = document.getElementById("newInput").value;
-    var text = document.createTextNode(newInput);
-    list.appendChild(text);
-    if (newInput == "") {
+    var item = document.createElement("li");
+    var input = document.getElementById("newInput").value;
+    var text = document.createTextNode(input);
+    item.appendChild(text);
+    if (input == "") {
         alert("Write something first!");
     } else {
-        document.getElementById("itemUL").appendChild("list");
+        document.getElementById("itemUL").appendChild(item);
     }
     document.getElementById("newInput").value = "";
 
     var close = document.createElement("SPAN");
-    var text = document.createTextNode("\u00D7");
-    span.className = "x";
-    x.appendChild(text);
-    list.appendChild(close);
+    text = document.createTextNode("X");
+    close.className = "x";
+    close.appendChild(text);
+    item.appendChild(close);
 
-    //fix?
+//fix? ul remove child
     for (i = 0; i < x.length; i++) {
         x[i].onclick = function() {
-            var div = this.parentElement;
-            div.style.display = "none";
+            var remove1 = this.parentElement;
+            //var remove2 = getElementById("itemUL");
+            remove1.removeChild(remove1)
         }
     }
 }
